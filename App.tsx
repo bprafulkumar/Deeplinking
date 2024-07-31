@@ -1,46 +1,22 @@
-// import { View, Text } from "react-native";
-// import React from "react";
-// import { TodoContext } from "./allContext/todoContext/todoContext";
-// import Todo from "./Components/todoItems/Todo";
-// import CustomButton from "./Components/todoItems/CustomButton";
+import React, {Component} from 'react';
+import {createStackNavigator} from '@react-navigation/stack';
+import CustomBottomTab from './Navigations/CustomBottomTab';
+import {NavigationContainer} from '@react-navigation/native';
+import LoginScreen from './src/screens/LoginScreen';
+import SplashScreen from './src/screens/SplashScreen';
 
-// export default function App() {
-//   return (
-//       <TodoContext>
-//           <CustomButton />
-//           <Todo/>
-//       </TodoContext>
-//   );
-// }
+const Stack = createStackNavigator();
 
-// import React, {Component} from 'react';
-// import {Text, View} from 'react-native';
-// import {CounterProvider} from './allContext/contextApi/CounterContext';
-// import Counter from './Components/Counter/Counter';
-
-// export default class App extends Component {
-//   render() {
-//     return (
-//       <CounterProvider>
-//         <Counter />
-//       </CounterProvider>
-//     );
-//   }
-// }
-
-import { View, Text } from "react-native";
-import React from "react";
-import { Provider } from "react-redux";
-import TodoRedux from "./todoRedux/TodoRedux";
-import store from "./reduxFlow/store";
-import CustomInput from "./todoRedux/CustomInput";
-
-export default function App() {
-  return (
-    <Provider store={store}>
-      <CustomInput/>
-      <TodoRedux/>
-    </Provider>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{headerShown:false}}>
+          <Stack.Screen name="SplashScreen" component={SplashScreen} />
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="BottomNavigation" component={CustomBottomTab} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
 }
-

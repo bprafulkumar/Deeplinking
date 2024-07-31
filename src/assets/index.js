@@ -1,0 +1,6 @@
+export const preview = require("./preview.png")
+export const robot = require("./robot.png")
+export const  AppLogo = require("./logo.png")
+export const  box = require("./square.png")
+export const  checkBox = require("./check-box.png")
+export const  googlePlus = require("./google-plus.png")
