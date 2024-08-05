@@ -1,17 +1,19 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text} from 'react-native';
+import {SafeAreaView, StyleSheet, Text} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 export default class Helpline extends Component {
   render() {
     return (
-      <LinearGradient
-        colors={['#dfc7fa', '#62497f', '#60497e']}
-        start={{x: 0, y: 0}}
-        end={{x: 0, y: 0.7}}
-        style={styles.linearGradient}>
-        <Text style={styles.centerText}>Helpline Screen</Text>
-      </LinearGradient>
+      <SafeAreaView style={{flex: 1}}>
+        <LinearGradient
+          colors={['#dfc7fa', '#62497f', '#60497e']}
+          start={{x: 0, y: 0}}
+          end={{x: 0, y: 0.7}}
+          style={styles.linearGradient}>
+          <Text style={styles.centerText}>Helpline Screen</Text>
+        </LinearGradient>
+      </SafeAreaView>
     );
   }
 }
@@ -24,8 +26,7 @@ let styles = StyleSheet.create({
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom:-4
-
+    marginBottom: -4,
   },
   centerText: {
     fontSize: 18,

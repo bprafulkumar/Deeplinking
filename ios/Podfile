@@ -13,7 +13,7 @@ prepare_react_native_project!
 #   dependencies: {
 #     ...(process.env.NO_FLIPPER ? { 'react-native-flipper': { platforms: { ios: null } } } : {}),
 # ```
-flipper_config = ENV['NO_FLIPPER'] == "1" ? FlipperConfiguration.disabled : FlipperConfiguration.enabled
+flipper_config =  FlipperConfiguration.enabled
 
 linkage = ENV['USE_FRAMEWORKS']
 if linkage != nil
@@ -23,6 +23,13 @@ end
 
 target 'graphBar' do
   config = use_native_modules!
+  pod 'FirebaseCoreInternal', :modular_headers => true
+  pod 'Firebase/Messaging', :modular_headers => true
+  pod 'GoogleUtilities', :modular_headers => true
+  pod 'FirebaseCore', :modular_headers => true
+  $RNFirebaseAsStaticFramework = true
+  $RNGoogleMobileAdsAsStaticFramework = true
+  $RNFirebaseAsStaticFramework = true
 
   # Flags change depending on the env values.
   flags = get_default_flags()

@@ -1,0 +1,11 @@
+[
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.graphbar",
+        "sha256_cert_fingerprints": ["62:94:10:5B:06:16:D7:33:A5:2E:A8:96:07:56:E5:21:29:B9:93:BC:61:D3:32:F0:95:05:36:77:77:B5:7D:A3"]
+      }
+    }
+  ]
+  
