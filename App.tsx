@@ -29,7 +29,6 @@ const linking = {
 export default class App extends Component {
    handleDeepLink = (event:any) => {
     let { url } = event;
-    console.log(url,"===>skdnasd")
   };
   componentDidMount(): void {
     Linking.addEventListener('url', this.handleDeepLink);
